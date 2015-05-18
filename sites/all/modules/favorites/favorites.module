@@ -1,19 +1,28 @@
 <?php
 
-    function favorites_menu(){
+    function favorites_menu()
+    {
+        $items = array();
+        //BOOKS
+        //create menu item
+        $items['favorite_books'] = array(
+            'title'=>'Favorite Books',
+            'page callback' => 'show_books',
+            'access callback' => TRUE,
+            'type' => MENU_NORMAL_ITEM,
+        );
 
-    $items = array();
-    $items['favorite_books'] = array(
-        'title'=>'Favorite Books',
-        'page callback' => 'show_books',
-        'access callback' => TRUE,
-        'type' => MENU_NORMAL_ITEM,
-    );
-    return $items;
+        $items['favorite_movies'] = array(
+            'title'=>'Favorite Movies',
+            'page callback' => 'show_movies',
+            'access callback' => TRUE,
+            'type' => MENU_NORMAL_ITEM,
+        );
+        return $items;
     }
 
+//BOOKS FUNCTION
     function show_books() {
-
         $favorites_books = array(
             'book1' => array(
                 'title' => 'The Help',
@@ -28,9 +37,8 @@
                 'author' => 'John Greene',
             ),
         );
-        // return "<p> our favorites</p>";
         $bookstuff_by_abeer = "";
-        foreach( $favorites_books as $bookNumber => $book_info){
+        foreach( $favorites_books as $book_number => $book_info){
             $bookstuff_by_abeer .= "<p>" . $book_info ['title']. "</p>";
             $bookstuff_by_abeer .= "<p>" . $book_info ['author']."</p></br>";
 
@@ -38,39 +46,33 @@
         return $bookstuff_by_abeer;
     }
 
+//MOVIES FUNCTION
+    function show_movies() {
+        $favorites_movies = array(
+            'movie1' => array(
+                'title' => 'Get Smart',
+                'genre' => 'Action Comedy',
+            ),
+            'movie2' => array(
+                'title' => 'Battlestar Galactica',
+                'genre' => 'Science Fiction',
+            ),
+            'movie3' => array(
+                'title' => 'Princess Bride',
+                'genre' => 'Comedy',
+            ),
+        );
+        $display_movies = "";
+        foreach( $favorites_movies as $movie_number => $movie_info){
+            $display_movies .= "<h3>" . $movie_info['title']. "</h3>";
+            $display_movies .= "<h4>" . $movie_info['genre']. "</h4></br>";
+        }
+        return $display_movies;
+    }
+
+//SONGS FUNCTION
 
 
-
-//         $favorites['books'] = array(
-//             'book1' => array(){
-//                 'title' => 'The Help',
-//                 'author' => 'Somebody',
-//             },
-//             'book2' => array(){
-//                 'title' => '2001: A Space Odyssey',
-//                 'author' => 'Arthur C. Clark',
-//             },
-//             'book3'=> array(){
-//                 'title' => 'The Fault in Our Stars',
-//                 'author' => 'John Greene',
-//             },
-//         );
-// //
-//         $favorites['movies'] = array(
-//             'movie1' => array(){
-//                 'title' => 'Get Smart',
-//                 'genre' => 'Action Comedy',
-//             },
-//             'movie2' => array(){
-//                 'title' => 'Battlestar Galactica',
-//                 'genre' => 'Science Fiction',
-//             },
-//             'movie3' => array(){
-//                 'title' => 'Princess Bride',
-//                 'genre' => 'Comedy',
-//             },
-//         );
-//
 //         $favorites['songs'] = array(
 //             'song1' => array(){
 //                 'title' => 'The Gambler',
@@ -86,25 +88,11 @@
 //                 },
 //         );
 // };
-//
 
-
-
-// <!-- unction pet_menu(){
-//     $items = array();
-//     $items['my_favorite_pet'] = array(
-//         'title' => "My Favorite Pet",
-//         'page callback' => 'get_pet_info',
-//         'access callback' => TRUE,
-//         'type' => MENU_NORMAL_ITEM,
-//     );
-//   return $items;
-// }
-//
+//PLAYING AROUND WITH JAVASCRIPT-
 // function get_pet_info() {
 //     return "<h2>Otto</h2></br>
 //     <button onclick='myFunction()'>Click me</button>
-//
-//
+
 //     <a href='pet'><img src='/sites/images/pet.jpg' alt='pet picture' height='200' width='200'></a>";
 // } -->
