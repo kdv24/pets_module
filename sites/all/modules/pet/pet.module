@@ -1,3 +1,9 @@
+<script>
+function myFunction() {
+    alert("This might work");
+}
+</script>
+
 <?php
 
 function pet_menu(){
@@ -12,8 +18,11 @@ function pet_menu(){
 }
 
 function get_pet_info() {
-    return "<h2>Otto</h2>";
-    // <a href='pet.html'><img src='img/pet.jpg' alt='pet picture'/></a>";
+    return "<h2>Otto</h2></br>
+    <button onclick='myFunction()'>Click me</button>
+
+
+    <a href='pet'><img src='/sites/images/pet.jpg' alt='pet picture' height='200' width='200'></a>";
 }
 
 
@@ -25,3 +34,8 @@ to an external page with information about your type of pet.
 Include an image and a link to an external page with
 information about your type of pet.
 */
+
+// <button onclick="myFunction()">Click me</button>
+
+
+// <img src='https://s-media-cache-ak0.pinimg.com/736x/61/22/cb/6122cb371a319afa82c5d4e8077ebbdc.jpg' alt = 'pug'></img>

@@ -2,4 +2,4 @@ name = Pet
 description = Display image and link to external info page for pet.
 package = Epicodus Examples
 core = 7.x
-files[] = pet.module
+files[] = pet.module, img/pet.jpg
