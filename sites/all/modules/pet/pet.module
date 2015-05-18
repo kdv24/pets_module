@@ -36,6 +36,7 @@ information about your type of pet.
 */
 
 // <button onclick="myFunction()">Click me</button>
+// http://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onclick
 
 
 // <img src='https://s-media-cache-ak0.pinimg.com/736x/61/22/cb/6122cb371a319afa82c5d4e8077ebbdc.jpg' alt = 'pug'></img>
