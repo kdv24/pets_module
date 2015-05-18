@@ -1,4 +1,4 @@
-name = Favorites
+name = favorites
 description = Display three menu items: movies, books, songs, and show three of each
 package = Epicodus Examples
 core = 7.x

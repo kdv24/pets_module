@@ -2,76 +2,109 @@
 
     function favorites_menu(){
 
-    // $items['my_favorites'] = array();
-    // $items['my_favorites']['book'] = array(
-    // 'book1'=> array(){
-    //     'title'=>'The Help',
-    //
-
-        $favorites['books'] = array(
-            'book1' => array(){
-                'title' => 'The Help',
-                'author' => 'Somebody',
-            },
-            'book2' => array(){
-                'title' => '2001: A Space Odyssey',
-                'author' => 'Arthur C. Clark',
-            },
-            'book3'=> array(){
-                'title' => 'The Fault in Our Stars',
-                'author' => 'John Greene',
-            },
-        );
-
-        $favorites['movies'] = array(
-            'movie1' => array(){
-                'title' => 'Get Smart',
-                'genre' => 'Action Comedy',
-            },
-            'movie2' => array(){
-                'title' => 'Battlestar Galactica',
-                'genre' => 'Science Fiction',
-            },
-            'movie3' => array(){
-                'title' => 'Princess Bride',
-                'genre' => 'Comedy',
-            },
-        );
-
-        $favorites['songs'] = array(
-            'song1' => array(){
-                'title' => 'The Gambler',
-                'singer' => 'Kenny Roger',
-                },
-            'song2' => array(){
-                'title' => 'I Gotta Feeling',
-                'singer' => 'Black Eyed Peas'
-                },
-            'song3'=> array(){
-                'title' => 'The Music of the Night',
-                'singer' => 'The Phantom of the Opera'
-                },
-        );
-};
-
-
-
-
-<!-- unction pet_menu(){
     $items = array();
-    $items['my_favorite_pet'] = array(
-        'title' => "My Favorite Pet",
-        'page callback' => 'get_pet_info',
+    $items['favorite_books'] = array(
+        'title'=>'Favorite Books',
+        'page callback' => 'show_books',
         'access callback' => TRUE,
         'type' => MENU_NORMAL_ITEM,
     );
-  return $items;
-}
+    return $items;
+    }
 
-function get_pet_info() {
-    return "<h2>Otto</h2></br>
-    <button onclick='myFunction()'>Click me</button>
+    function show_books() {
+
+        $favorites_books = array(
+            'book1' => array(
+                'title' => 'The Help',
+                'author' => 'Somebody',
+            ),
+            'book2' => array(
+                'title' => '2001: A Space Odyssey',
+                'author' => 'Arthur C. Clark',
+            ),
+            'book3'=> array(
+                'title' => 'The Fault in Our Stars',
+                'author' => 'John Greene',
+            ),
+        );
+        // return "<p> our favorites</p>";
+        $bookstuff_by_abeer = "";
+        foreach( $favorites_books as $bookNumber => $book_info){
+            $bookstuff_by_abeer .= "<p>" . $book_info ['title']. "</p>";
+            $bookstuff_by_abeer .= "<p>" . $book_info ['author']."</p></br>";
+
+        }
+        return $bookstuff_by_abeer;
+    }
 
 
-    <a href='pet'><img src='/sites/images/pet.jpg' alt='pet picture' height='200' width='200'></a>";
-} -->
+
+
+//         $favorites['books'] = array(
+//             'book1' => array(){
+//                 'title' => 'The Help',
+//                 'author' => 'Somebody',
+//             },
+//             'book2' => array(){
+//                 'title' => '2001: A Space Odyssey',
+//                 'author' => 'Arthur C. Clark',
+//             },
+//             'book3'=> array(){
+//                 'title' => 'The Fault in Our Stars',
+//                 'author' => 'John Greene',
+//             },
+//         );
+// //
+//         $favorites['movies'] = array(
+//             'movie1' => array(){
+//                 'title' => 'Get Smart',
+//                 'genre' => 'Action Comedy',
+//             },
+//             'movie2' => array(){
+//                 'title' => 'Battlestar Galactica',
+//                 'genre' => 'Science Fiction',
+//             },
+//             'movie3' => array(){
+//                 'title' => 'Princess Bride',
+//                 'genre' => 'Comedy',
+//             },
+//         );
+//
+//         $favorites['songs'] = array(
+//             'song1' => array(){
+//                 'title' => 'The Gambler',
+//                 'singer' => 'Kenny Roger',
+//                 },
+//             'song2' => array(){
+//                 'title' => 'I Gotta Feeling',
+//                 'singer' => 'Black Eyed Peas'
+//                 },
+//             'song3'=> array(){
+//                 'title' => 'The Music of the Night',
+//                 'singer' => 'The Phantom of the Opera'
+//                 },
+//         );
+// };
+//
+
+
+
+// <!-- unction pet_menu(){
+//     $items = array();
+//     $items['my_favorite_pet'] = array(
+//         'title' => "My Favorite Pet",
+//         'page callback' => 'get_pet_info',
+//         'access callback' => TRUE,
+//         'type' => MENU_NORMAL_ITEM,
+//     );
+//   return $items;
+// }
+//
+// function get_pet_info() {
+//     return "<h2>Otto</h2></br>
+//     <button onclick='myFunction()'>Click me</button>
+//
+//
+//     <a href='pet'><img src='/sites/images/pet.jpg' alt='pet picture' height='200' width='200'></a>";
+// } -->
