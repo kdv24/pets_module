@@ -1,0 +1,27 @@
+<?php
+
+function pet_menu(){
+    $items = array();
+    $items['my_favorite_pet'] = array(
+        'title' => "My Favorite Pet",
+        'page callback' => 'get_pet_info',
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM,
+    );
+  return $items;
+}
+
+function get_pet_info() {
+    return "<h2>Otto</h2>";
+    // <a href='pet.html'><img src='img/pet.jpg' alt='pet picture'/></a>";
+}
+
+
+/*
+Create a module called pet. It should create a menu item
+leading to a page about your favorite pet (living, dead or fictional). Include an image and a link
+to an external page with information about your type of pet.
+
+Include an image and a link to an external page with
+information about your type of pet.
+*/
